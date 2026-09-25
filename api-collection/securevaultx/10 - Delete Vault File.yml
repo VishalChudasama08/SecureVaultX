@@ -1,0 +1,19 @@
+info:
+  name: 10 - Delete Vault File
+  type: http
+  seq: 10
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/api/vault/files/PASTE_FILE_ID_HERE"
+  headers:
+    - name: X-CSRF-TOKEN
+      value: PASTE_TOKEN_FROM_REQUEST_01
+
+docs: >
+  204 No Content on success. Removes the on-disk .enc file and the
+  database record together (see docs/ARCHITECTURE.md §7 for the ordering
+  used to avoid orphaned files or dangling rows).
+
+settings:
+  encodeUrl: true

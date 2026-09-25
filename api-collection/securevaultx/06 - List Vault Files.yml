@@ -1,0 +1,15 @@
+info:
+  name: 06 - List Vault Files
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/vault/files"
+
+docs: >
+  Lists only the current session user's vault files (id, filename, size,
+  createdAt), newest first.
+
+settings:
+  encodeUrl: true

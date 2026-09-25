@@ -1,0 +1,31 @@
+info:
+  name: 03 - Login
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/auth/login"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+    - name: X-CSRF-TOKEN
+      value: PASTE_TOKEN_FROM_REQUEST_01
+  body:
+    type: form-urlencoded
+    data:
+      - name: email
+        value: vishal@example.com
+      - name: password
+        value: correct-horse-1
+
+docs: >
+  Spring Security's own form-login filter handles this endpoint (not a
+  controller method) — the body MUST be form-urlencoded, not JSON, with
+  fields "email" and "password". On success: 204 No Content and a new
+  session cookie (Bruno stores it automatically). On failure: 401
+  Unauthorized with code INVALID_CREDENTIALS (identical body for "wrong
+  password" and "unknown email", by design — see docs/ARCHITECTURE.md).
+
+settings:
+  encodeUrl: true

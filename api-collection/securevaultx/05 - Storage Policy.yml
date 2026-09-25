@@ -1,0 +1,15 @@
+info:
+  name: 05 - Storage Policy
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/files/policy"
+
+docs: >
+  Returns maxVaultFileSizeBytes and maxUploadSizeBytes so a client can
+  show the current server-configured limits instead of hard-coding them.
+
+settings:
+  encodeUrl: true

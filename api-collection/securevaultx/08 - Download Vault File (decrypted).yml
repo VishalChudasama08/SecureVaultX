@@ -1,0 +1,16 @@
+info:
+  name: 08 - Download Vault File (decrypted)
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/vault/files/PASTE_FILE_ID_HERE/content"
+
+docs: >
+  Streams the original file back, only after the server has fully
+  authenticated the stored ciphertext. Use Bruno's "Save Response" /
+  the response panel's download button to save it to disk.
+
+settings:
+  encodeUrl: true

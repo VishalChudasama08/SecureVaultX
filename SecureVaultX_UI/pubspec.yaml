@@ -1,0 +1,32 @@
+name: securevaultx_ui
+description: SecureVaultX - responsive Flutter client for the SecureVaultX encrypted file vault.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # REST client: streaming upload/download, progress, cancellation, cookie jar integration.
+  dio: ^5.7.0
+  # Session cookie (JSESSIONID) handling + persistence so the login survives app restarts.
+  dio_cookie_manager: ^3.1.1
+  cookie_jar: ^4.0.8
+  # Lightweight state management (ChangeNotifier) and dependency injection.
+  provider: ^6.1.2
+  # Declarative routing with auth redirects.
+  go_router: ^14.6.2
+  # Native open/save dialogs on desktop and mobile.
+  file_picker: ^8.1.6
+  path_provider: ^2.1.5
+  path: ^1.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

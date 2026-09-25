@@ -1,0 +1,28 @@
+info:
+  name: 02 - Register
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/auth/register"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: X-CSRF-TOKEN
+      value: PASTE_TOKEN_FROM_REQUEST_01
+  body:
+    type: json
+    data: |-
+      {
+        "fullName": "Vishal",
+        "email": "vishal@example.com",
+        "password": "correct-horse-1"
+      }
+
+docs: >
+  201 Created on success, with the new user's profile (no password hash).
+  409 Conflict (code: EMAIL_ALREADY_REGISTERED) if the email is taken.
+
+settings:
+  encodeUrl: true

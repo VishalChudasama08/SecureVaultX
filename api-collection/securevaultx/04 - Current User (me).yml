@@ -1,0 +1,15 @@
+info:
+  name: 04 - Current User (me)
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/auth/me"
+
+docs: >
+  Requires a logged-in session (run 03 - Login first). Returns fullName,
+  email, createdAt. 401 UNAUTHENTICATED if not logged in / session expired.
+
+settings:
+  encodeUrl: true

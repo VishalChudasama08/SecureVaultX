@@ -1,0 +1,18 @@
+info:
+  name: 11 - Logout
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/auth/logout"
+  headers:
+    - name: X-CSRF-TOKEN
+      value: PASTE_TOKEN_FROM_REQUEST_01
+
+docs: >
+  Invalidates the session server-side. 204 No Content on success; the
+  session cookie is also cleared.
+
+settings:
+  encodeUrl: true
